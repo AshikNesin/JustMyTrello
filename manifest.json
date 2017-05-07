@@ -1,0 +1,40 @@
+{
+  "name": "Show My Cards on Trello",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "View only the Cards that you are tagged in",
+  "homepage_url": "http://hugethoughts.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "https://trello.com/b/*"
+  ],
+  "web_accessible_resources": ["icons/filter-32.png"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://trello.com/b/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://trello.com/b/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
