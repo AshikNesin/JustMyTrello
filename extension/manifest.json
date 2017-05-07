@@ -1,5 +1,6 @@
 {
-  "name": "JustMyTrello",
+  "name": "JustMyTrello - View Your Cards",
+  "short_name":"JustMyTrello",
   "version": "1.0.0",
   "manifest_version": 2,
   "description": "Just view the cards that are assigned to you on Trello board",
