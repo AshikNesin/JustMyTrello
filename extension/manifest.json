@@ -1,9 +1,9 @@
 {
-  "name": "Trello - Just My Cards",
+  "name": "JustMyTrello",
   "version": "1.0.0",
   "manifest_version": 2,
   "description": "Just view the cards that are assigned to you on Trello board",
-  "homepage_url": "https://github.com/HugeThoughts/trello-just-my-cards",
+  "homepage_url": "https://github.com/HugeThoughts/JustMyTrello",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
