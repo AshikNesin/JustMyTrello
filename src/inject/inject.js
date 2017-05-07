@@ -58,7 +58,12 @@ const showAllCards = () => {
 }
 
 
-const appendSMCFilterNode = ()=> {
+const appendFilterButton = ()=> {
+	const filterBtn = document.getElementById('card-filter-btn')
+	if(filterBtn){
+		return
+	}
+
 	const filterNode = document.createElement("a")
 	filterNode.setAttribute('class','board-header-btn')
 	filterNode.setAttribute('id','card-filter-btn')
@@ -83,11 +88,21 @@ const appendSMCFilterNode = ()=> {
 	insertAfter(filterNode,permissionLevelNode)
 }
 
+const initFilter = ()=>{
+	const TRELLO_BOARD_REGEX = /(?:(?:http|https):\/\/)?(?:www.)?trello.com\/b\/\/?/
+
+	setInterval(()=>{
+		if(TRELLO_BOARD_REGEX.test(window.location.href)){
+			appendFilterButton()
+		}
+	}, 3000)
+}
+
 chrome.extension.sendMessage({}, function(response) {
 	var readyStateCheckInterval = setInterval(function() {
 	if (document.readyState === "complete") {
 		clearInterval(readyStateCheckInterval);
-		appendSMCFilterNode()
+		initFilter()
 	}
 	}, 10);
 });
