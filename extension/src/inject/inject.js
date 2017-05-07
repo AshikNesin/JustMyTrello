@@ -1,5 +1,7 @@
 function insertAfter(newNode, referenceNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    if(isNaN(referenceNode.parentNode)){
+    	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
 }
 
 const getUserAvatarUrl = () =>{
@@ -13,7 +15,7 @@ const toggleCardFilter = () =>{
 	if(filter==='all'){
 		showMyCards()
 	}
-	else{
+	else if(filter==='my'){
 		showAllCards()
 	}
 }
@@ -95,7 +97,7 @@ const initFilter = ()=>{
 		if(TRELLO_BOARD_REGEX.test(window.location.href)){
 			appendFilterButton()
 		}
-	}, 3000)
+	}, 1500)
 }
 
 chrome.extension.sendMessage({}, function(response) {

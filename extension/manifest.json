@@ -1,7 +1,7 @@
 {
   "name": "JustMyTrello - View Your Cards",
   "short_name":"JustMyTrello",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "description": "Just view the cards that are assigned to you on Trello board",
   "homepage_url": "https://github.com/HugeThoughts/JustMyTrello",
@@ -17,13 +17,13 @@
     "persistent": true
   },
   "permissions": [
-    "https://trello.com/b/*"
+    "https://trello.com/*"
   ],
   "web_accessible_resources": ["icons/filter-32.png"],
   "content_scripts": [
     {
       "matches": [
-        "https://trello.com/b/*"
+        "https://trello.com/*"
       ],
       "css": [
         "src/inject/inject.css"
@@ -31,7 +31,7 @@
     },
     {
       "matches": [
-        "https://trello.com/b/*"
+        "https://trello.com/*"
       ],
       "js": [
         "src/inject/inject.js"
